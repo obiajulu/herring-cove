@@ -1,7 +1,7 @@
 name: Herring Cove
 author: Herring Cove
 url: "https://obiajulu.github.io"
-baseurl: /
+baseurl: "/obiajulu.github.io"
 description: theme for jekyll
 github: http://www.github.com/obiajulu
 twitter: http://www.twitter.com/
