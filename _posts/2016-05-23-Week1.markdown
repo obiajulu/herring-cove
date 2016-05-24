@@ -1,6 +1,5 @@
 ---
 title: Journal for Week 1
-date: 2016-23-05 
 categories: journal entry
 ---
 
