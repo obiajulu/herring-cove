@@ -1,45 +1,33 @@
 ---
-title: What is this, anyway?
-date: 2013-12-08 19:55:16
-categories: jekyll testing
+title: Journal for Week 1
+date: 2016-23-05 
+categories: journal entry
 ---
 
+###Current plan for the week
+1. (Monday/Tuesday) Adam Bashforth methods
+Shift to open development and clean up code
+Test with IVPTestSuite.jl
+Add Documentation 
+Run by Mauro and Jiaho to get feedback and see how to best fit Julia coding conventions, etc.
+2. (Tuesday/Wednesday) Getting comfortable with IVPTestSuite.jl
+Run with preexisting solvers
+Add a new stiff and non-stiff test case
+3. (Wednesday/Thursday) Explore JuliaParallel
+Look at solvers there implemented
+Look at the tests in ts.jl  
+4. (Thursday/Friday) Explore BenchmarkTools.jl as side project (if time permits)
+Run demos with the package
+Write a small summary of the pro's and con's of using it, as I see it, and run it by Mauro
+Reach out to @jrevels
+5. (Friday/Saturday) Begin implementing Implicit solver RADUA
+Read relevant literature
+Come up with a overall sketch of the solver
+Start coding
+6. (Saturday) A Blog post recapping the first week 
 
-Herring Cove is a clean and responsive theme for Jekyll.
-
-
-### Overview
-
-* Fixed Sidebar with social links
-* Minimal design
-* Comments by Disqus
-* Social Sharing abilities
-* Easy to configure
-* Based on Bootstrap
-
-### Screenshots
-
-![screenshot]({{ site.baseurl }}/images/screenshot1.png)
-![screenshot]({{ site.baseurl }}/images/screenshot2.png)
-
-### Setup
-
-1. Install Jekyll
-2. Fork or [download](https://github.com/arnp/herring-cove/archive/master.zip) this theme repo
-3. Edit the `_config.yml` file
-
-You can change the showcase image by replacing `showcase.jpg` file in the `images` folder. I'll try to find a better way to do this soon.
-
-### Download
-
-[download](https://github.com/arnp/herring-cove/archive/master.zip)
-
-### License
-* [MIT](http://opensource.org/licenses/MIT)
-
--------------
-Herring Cove is always a work in progress and as such, I hope to clean up the code and add features as time permits. Feel free to add your own additions.
-
-*What's with the name?*
-
-[Herring Cove](http://www.capecodbeachchair.com/beachguide/index.cfm?page=3&BeachID=5) is a beach on Cape Cod in Provincetown, Massachusetts. If you're in the area, be sure to check it out!
+###Journal entry: #1
+* Skype called with Mauro this morning to talk overall vision, and goals for today
+* Worked on using Jiaho's edits to my demo to code Adam Bashforth. Tried to model code after solvers in ODE.jl. Was careful to only use Hairier et al (pg 357-358)
+* Spent tonight of the day setting up Juno environment for development, and getting much more comfortable with Git and the Julia Dev Workflow
+* Posted a question on slack asking other students and developers about what workflow they used
