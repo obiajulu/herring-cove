@@ -1,15 +1,14 @@
-name: Joe and Code
+name: Joe + Code
 author: Joseph Obiajulu
 url: "https://obiajulu.github.io"
 baseurl: "/obiajulu.github.io"
-description: a julia + google blog
+description: a Julia SOC blog
 github: http://www.github.com/obiajulu
-twitter: http://www.twitter.com/
-facebook: http://www.facebook.com
-linkedin: http://www.linkedin.com
-email: rnpatel[at]me.com
-location: 42°2'16"N   70°12'47"W
-disqus: obiajulu
+#twitter: http://www.twitter.com/
+#facebook: http://www.facebook.com
+#linkedin: http://www.linkedin.com
+email: obiajulu[at]princeton.edu
+#disqus: obiajulu
 
 ##Make sure to edit the above fields, especially for disqus.
 
