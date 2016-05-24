@@ -6,24 +6,24 @@ categories: journal entry
 
 ###Current plan for the week
 1. (Monday/Tuesday) Adam Bashforth methods
-Shift to open development and clean up code
-Test with IVPTestSuite.jl
-Add Documentation 
-Run by Mauro and Jiaho to get feedback and see how to best fit Julia coding conventions, etc.
+  + Shift to open development and clean up code
+  + Test with IVPTestSuite.jl
+  + Add Documentation 
+  + Run by Mauro and Jiaho to get feedback and see how to best fit Julia coding conventions, etc.
 2. (Tuesday/Wednesday) Getting comfortable with IVPTestSuite.jl
-Run with preexisting solvers
-Add a new stiff and non-stiff test case
+  + Run with preexisting solvers
+  +  Add a new stiff and non-stiff test case
 3. (Wednesday/Thursday) Explore JuliaParallel
-Look at solvers there implemented
-Look at the tests in ts.jl  
+  +  Look at solvers there implemented
+  +  Look at the tests in ts.jl  
 4. (Thursday/Friday) Explore BenchmarkTools.jl as side project (if time permits)
-Run demos with the package
-Write a small summary of the pro's and con's of using it, as I see it, and run it by Mauro
-Reach out to @jrevels
+  +  Run demos with the package
+  +  Write a small summary of the pro's and con's of using it, as I see it, and run it by Mauro
+  +  Reach out to @jrevels
 5. (Friday/Saturday) Begin implementing Implicit solver RADUA
-Read relevant literature
-Come up with a overall sketch of the solver
-Start coding
+  +  Read relevant literature
+  +  Come up with a overall sketch of the solver
+  +  Start coding
 6. (Saturday) A Blog post recapping the first week 
 
 ###Journal entry: #1
