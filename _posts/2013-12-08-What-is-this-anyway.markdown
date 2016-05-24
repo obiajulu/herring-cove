@@ -28,6 +28,6 @@ categories: journal entry
 
 ###Journal entry: #1
 * Skype called with Mauro this morning to talk overall vision, and goals for today
-* Worked on using Jiaho's edits to my demo to code Adam Bashforth. Tried to model code after solvers in ODE.jl. Was careful to only use Hairier et al (pg 357-358)
+* Worked on using Jiaho's edits to my demo to code Adam Bashforth. Tried to model code after solvers in ODE.jl. Was careful to only use Hairier et al (pg 357-358). (See https://github.com/obiajulu/ODE.jl/src/)
 * Spent tonight of the day setting up Juno environment for development, and getting much more comfortable with Git and the Julia Dev Workflow
 * Posted a question on slack asking other students and developers about what workflow they used
