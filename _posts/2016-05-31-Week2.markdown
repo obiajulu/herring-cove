@@ -18,7 +18,7 @@ categories: journal entry
 4. (Saturday) A Blog post recapping the second week 
 
 ###Journal entry: #6
-* Unforunately, a good portion of the day adn late night were spent debugging code I wrote
+* Unforunately, a good portion of the day and late night were spent debugging code
 * I spent a far amount of time today trying to clean up ODE.jl in IVPTestSuite. I first tried scraping the metaprograming, however, I found that the metaprogramming was necessary in order to achieve the desired functionality of being able to `use IVPTestSuite`, and call a ODE solver instance with, for example, Solvers.ode23s. It seems removing the mesy metaprogramming may be repectifully sizable. 
 * Another focus today was adding a new test case to IVPTestSuite. I choose the PLEI problem, described on pg 245 of Hairer. The problem is almost completely ready, I was have been going through the testing and debugging stage.
 * I also attempted to run pwl's PR locally. I was not able to get the Winston package working properly to render graphs. I think I would like to see I can tomorrow.
