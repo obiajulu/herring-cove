@@ -23,3 +23,17 @@ categories: journal entry
 * Another focus today was adding a new test case to IVPTestSuite. I choose the PLEI problem, described on pg 245 of Hairer. The problem is almost completely ready, I was have been going through the testing and debugging stage.
 * I also attempted to run pwl's PR locally. I was not able to get the Winston package working properly to render graphs. I think I would like to see I can tomorrow.
 * I ultimately decided to work on the adaptive and implicit Adam Bashforth solver, and will plan to present this one during JuliaCon. I figured it would be nice to finish with all things Adam Bashforth, having already code the fixed step explicit and implement methods. Also, I am confident I can get a near production ready version of AB out by JuliaCon, but I think it is best not to rush the RADAUIIA methods.
+
+###Journal entry: #6
+* Finished adding PLEI test case, and the ob/plei branch of IVPTestSuite.jl is passing Travis build. Just need to finish up the header documentation of the new test case tomorrow
+* Started migrating IVPTestSuite.jl's plotting package from Winston to PyPlot. After sometime, was able to finally plot some performance results of solvers. Also, I was able to run initial tests on the JuliaLang/ODE.jl release versus pwl's PR. Currently, the performance of the pull request version seems quite a bit worse than the current ODE.jl release. For example, on `threebody`, the release's version of `ode4` runs test 5 of six with specs `sig. digits= 3.273585154893643, walltime= 2.245735044s, memory= 365.0MB
+`. `pwl`'s version runs test 5 of 6 with the following specs `Running test 5 of 6:
+ sig. digits= -0.00894961245245218, walltime= 293.201146862s, memory= 160263.0MB`. I'll rerun these tests tomorrow.
+* Submitted title and abstract for my JuliaCon talk coming up in almost exactly three weeks. 
+  - Title:  A Review of a Recently Implemented Implicit and Adaptive ODE Solver based on Adam-Bashforth-Multon Methods
+  - Abstract: ODE.jl is an ever increasing store house of numerical solvers of ordinary differential equations. While many solvers are currently found in ODE.jl, there are still many which are awaiting a native Julia implementation in the package (especially implicit solvers for stiff ODEs). Here we review an implicit and adaptive step-size solver based on the Adam-Bashforth-Multon method, recently implemented in Julia, but still awaiting final revisions before merging into ODE.jl. Performance results of the solver using the IVPTestSuite.jl are also presented.
+* Also spent a little more time working with the metaprogramming to see if we can have a cleaner IVPTestSuite/src/solvers/ODE.jl file. Once again, I couldn't find a cleaner way to implementing this than how it is already implemented in `master`. I'll move on from this until I can talk with my mentor @mauro3 about what to do. 
+* Tomorrow will start the implicit and adaptive Adam Bashforth implementation. I'll pretty excited for it!
+ 
+
+
