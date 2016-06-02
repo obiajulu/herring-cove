@@ -24,7 +24,7 @@ categories: journal entry
 * I also attempted to run pwl's PR locally. I was not able to get the Winston package working properly to render graphs. I think I would like to see I can tomorrow.
 * I ultimately decided to work on the adaptive and implicit Adam Bashforth solver, and will plan to present this one during JuliaCon. I figured it would be nice to finish with all things Adam Bashforth, having already code the fixed step explicit and implement methods. Also, I am confident I can get a near production ready version of AB out by JuliaCon, but I think it is best not to rush the RADAUIIA methods.
 
-###Journal entry: #6
+###Journal entry: #7
 * Finished adding PLEI test case, and the ob/plei branch of IVPTestSuite.jl is passing Travis build. Just need to finish up the header documentation of the new test case tomorrow
 * Started migrating IVPTestSuite.jl's plotting package from Winston to PyPlot. After sometime, was able to finally plot some performance results of solvers. Also, I was able to run initial tests on the JuliaLang/ODE.jl release versus pwl's PR. Currently, the performance of the pull request version seems quite a bit worse than the current ODE.jl release. For example, on `threebody`, the release's version of `ode4` runs test 5 of six with specs `sig. digits= 3.273585154893643, walltime= 2.245735044s, memory= 365.0MB
 `. `pwl`'s version runs test 5 of 6 with the following specs `Running test 5 of 6:
@@ -35,5 +35,8 @@ categories: journal entry
 * Also spent a little more time working with the metaprogramming to see if we can have a cleaner IVPTestSuite/src/solvers/ODE.jl file. Once again, I couldn't find a cleaner way to implementing this than how it is already implemented in `master`. I'll move on from this until I can talk with my mentor @mauro3 about what to do. 
 * Tomorrow will start the implicit and adaptive Adam Bashforth implementation. I'll pretty excited for it!
  
-
+###Journal entry: #8
+* Quickly added header documentation to PLEI test case on the ob/plei branch of IVPTestSuite.jl
+* Started implementing the adaptive Adam Bashforth explicit and implicit solvers, on ob/a-b_adaptive branch of obiajulu/ODE.jl. This first meant making sure I understand how these solvers worked, and deciding what overarching structure to set. I followed the implemenation described in Hairer's III.5 and III.7, where the order of the next step is determined in the same manner as it is for the adaptive Adams solver DEABM. A few steps still remain to be coded tomorrow, and testing will follow. The goal is to have a preliminary version of both solvers. 
+* Further testing of @pwl's PR with IVPTestSuite.jl was not pursued today, in favor of focusing mostly on the adaptive Adam solvers. Though, I hope I will be able to discuss the topic, as well as a general vision for where to take IVPTestSuite.jl, with my mentor tomorrow during our Thursday Skype call. 
 
