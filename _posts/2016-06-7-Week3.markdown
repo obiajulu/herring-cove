@@ -1,0 +1,24 @@
+---
+title: Journal for Week 3
+categories: journal entry
+---
+
+###Current plan for the week
+1. (Monday) Main goal: Search for the main root of the `ode_ab_adaptive` solver bug
+  + Tidy up `ode_ab_adaptive` code to make it easier to find bug
+  + Run battery of tests to see what is working and what is not
+  + Continue converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)
+2. (Tuesday) Main goal: Completely eradicate bug in `ode_ab_adaptive` solver
+  + Finishing converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)
+  + Produce performance comparison graphs
+3. (Wednesday) Main goal: Finish getting IVPTestSuite ready to run test again `ode_ab_adaptive`
+  + Run more tests with new `plei.jl` test case, and merge into main if ready
+  + Finishing converting IVPTestSuite.jl from Winston to PyPlot for plotting
+  + Locally run more tests of @pwl's PR with IVPTestSuite.jl, then create a ticket to send to @pwl
+4. (Thursday - Saturday) Main goal: Test `ode_ab_daptive` with IVPTestSuite and start collecting data for JuliaCon talk
+
+###Journal entry: #12
+* Continued work on on debugging the [adaptive Adam-Bashforth](https://github.com/obiajulu/ODE.jl/blob/1370f0f8d9a26b4654cf528635e53bb69c92fc1f/src/adam_bashforth_adaptive.jl) solver on my ob/a-b_adaptive branch of my fork of ODE.jl. Made some improvements. I have definitely narrowed the problem down to one point in the code, when the algorithm picks the next desired step size. I ran a battery of tests, which confirm this. For example, I used random, preassigned steps sizes, and found that if they were small enough, the solver yielded the correct results. This is important because it shows that the other parts of the algorithm are working (calculating the complicated recurrence relationships, etc). However, when I turn on the step selection, the step sizes seem to be 10 times too large. I'm still struggling to see why this is, but I am happy that I am at least making some progress. It is certainly increasing my patience!
+* Also, I Skyped with @mauro3 and @jiahao today, who gave me many good test cases I ran today, which helped me isolate where the issues are.
+* Also, I briefly spend sometime continuing the switch away from metaprogramming to using a dictionary in IVPTestSuite.
+
