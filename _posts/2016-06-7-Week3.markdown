@@ -3,17 +3,20 @@ title: Journal for Week 3
 categories: journal entry
 ---
 
-###Current plan for the week
+###Up-to-date plan for the week
 1. (Monday) Main goal: Search for the main root of the `ode_ab_adaptive` solver bug
-  + Tidy up `ode_ab_adaptive` code to make it easier to find bug
-  + Run battery of tests to see what is working and what is not
-  + Continue converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)
+  + ~~Tidy up `ode_ab_adaptive` code to make it easier to find bug~~
+  + ~~Run battery of tests to see what is working and what is not~~
+  + ~~Continue converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)~~
 2. (Tuesday) Main goal: Completely eradicate bug in `ode_ab_adaptive` solver
+  + ~~Get adaptive step selection working~~
+3. (Wednesday) Main goal: Examine performance of `ode_ab_adaptive`
   + Finishing converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)
-  + Produce performance comparison graphs
-3. (Wednesday) Main goal: Finish getting IVPTestSuite ready to run test again `ode_ab_adaptive`
-  + Run more tests with new `plei.jl` test case, and merge into main if ready
   + Finishing converting IVPTestSuite.jl from Winston to PyPlot for plotting
+  + Run IVPTestSuite tests against `ode_ab_adaptive`
+4. (Thursday) Main goal: Take time to finish some loose ends
+  + Skype about `ode_ab_adaptive` performance results
+  + Run more tests with new `plei.jl` test case, and merge into main if ready
   + Locally run more tests of @pwl's PR with IVPTestSuite.jl, then create a ticket to send to @pwl
 4. (Thursday - Saturday) Main goal: Test and tidy up `ode_ab_daptive` with IVPTestSuite and start collecting data for JuliaCon talk
 
@@ -22,3 +25,10 @@ categories: journal entry
 * Also, I Skyped with @mauro3 and @jiahao today, who gave me many good test cases I ran today, which helped me isolate where the issues are.
 * Also, I briefly spend sometime continuing the switch away from metaprogramming to using a dictionary in IVPTestSuite.
 
+
+###Journal entry: #13
+* Once again, worked on debugging. [adaptive Adam-Bashforth](https://github.com/obiajulu/ODE.jl/blob/7ba7bb26a246c365d9603fee030cdf6e674cacd0/src/adam_bashforth_adaptive.jl) solver. Today I was able to get the adaptive step selection to work for the first time.  The problem was with how the norm of the truncation error was being calculated. Namely, I wasn't dividing by a factor of `reltol` and/or `abstol` in its computation, as is done in eq 4.11 on page 168. This greatly increases the norm, since these values are taken <<1. Since, as shown in eq 7.5 on pg 423, the next step size is inversely proportional to the norm of the error, this increase in the norm lead to the desired decrease in the step size. The upshot, though, is that the step size heavily depends on `reltol` and `abstol`. Taken too large, and the step sizes become much larger resulting in a poor result. Take them too small, and the step sizes are unnecessarily small, wasting computation time. However, this seems to be inherit to the algorithm, seeing as the norm of LE in equation 7.5 is dependent on `reltol` and `abstol.` Indeed, the graph for the DEABM solver on (fig 7.1 on pg 424) show the dependence on what tolerance the code is run at.  
+* Tomorrow, I am looking forward to running more tests with `ode_ab_adaptive`. Namely, there are many questions I hope to be able to answer
+  * How does `ode_ab_adaptive` compare against other adaptive solvers for nonstiff equations, such as `ode78`, `ode23` or `ode45`?
+  * What is the best default setting for `reltol` and `abstol` for `ode_ab_daptive`?
+  * Can I reduce the runtime by being more careful with array sizes, element types, and redunancy?
