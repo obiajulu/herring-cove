@@ -10,7 +10,7 @@ categories: journal entry
   + ~~Continue converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)~~
 2. (Tuesday) Main goal: Completely eradicate bug in `ode_ab_adaptive` solver
   + ~~Get adaptive step selection working~~
-3. (Wednesday) Main goal: ~~Examine performance of `ode_ab_adaptive`~~ Optimize `ode_ab_adaptive`
+3. (Wednesday) Main goal: Optimize `ode_ab_adaptive`
   + ~~Optimize memory usage and computation complexity of `ode_ab_adaptive`~~
   + ~~Implement adaptive order selection of for `ode_ab_adaptive`, following the DEABM scheme presented in Harier III.7~~
   + ~~Finishing converting IVPTestSuite.jl from using metaprogramming to a dictionary (`m3/meta-gone` branch)~~
