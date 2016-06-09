@@ -36,7 +36,7 @@ categories: journal entry
   * What is the best default setting for `reltol` and `abstol` for `ode_ab_daptive`?
   * Can I reduce the runtime by being more careful with array sizes, element types, and redunancy?
   
-###Journal entry: #13
+###Journal entry: #14
 * Today was a pretty big day. I greatly reduced the runtime of  [`ode_ab_adaptive`](https://github.com/obiajulu/ODE.jl/blob/7ba7bb26a246c365d9603fee030cdf6e674cacd0/src/adam_bashforth_adaptive.jl) by an order or so by being much smarter with memory usage. I also implemented an adaptive order selection algorithm, which will increase or decrease the `steporder` to best reduce error. These two tasks were big successes, and took a big part of the day
 * Towards the end of the day, I work on finishing the conversion away from metaprogramming towards the usage of a dictionary in IVPTestSuite.jl. All of these changes are currently on the `m3/meta-gone` branch, and I am hoping to merge this with the master tomorrow. I'll bring it up when I talk to my mentors over Skype
 * Also, I finished the change away from the deprecated Winston package to PyPlot for plotting in IVPTestSuite.jl. With this, I was able to start to try to run IVPTestSuite.jl against `ode_ab_adaptive`. Though, there seems to be a bug I have to work out. 
