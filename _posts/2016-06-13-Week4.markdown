@@ -31,5 +31,6 @@ categories: journal entry
     - Discuss if there are any developers of other ODE solvers whom I should talk, especially those who developed solvers we may include in IVPTestSuite. 
   + Explore wha
 6. (Saturday-Sunday)Main goal: Prepare for JuliaCon; Tidy up `ode_ab_adaptive` and IVPTestSuite.jl
-  + Make a plan for JuliaCon
+  + Focus on stylistic changes to make sure code is consistent with rest of ODE.jl release
+  + Continue preparing JuliaCon presentation
 
