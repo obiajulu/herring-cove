@@ -1,0 +1,35 @@
+---
+title: Journal for Week 4
+categories: journal entry
+---
+
+###Up-to-date plan for the week
+1. (Monday) Main goal: Find out why `ode_ab_adaptive` is performing poorly
+  + Get `plei.jl` example fully functional, and compare performance of `ode_ab_adaptive` against RK methods (PLEI is a test case where function evaluations are expensive, which is where the AB methods are preferred. See Hairer pg 427)
+  + Skype about performance results and seek advice as to where the issues may be
+  + Continue debugging `ode_ab_adaptive` and also make switch to us `make_consisent_types()` function
+  + Have all IVPTestSuite feature branches ready for merging. First merge `m3/meta-gone`, then `ob/plei` and `ob/pyplot.`
+2. (Tuesday) Main goal: Optimize `ode_ab_adaptive`; Merge IVPTestSuite feature branches
+  + Continue to try to reduce memory usage of `ode_ab_adaptive`
+  + Merge feature branches of IVPTestSuite into master
+  + Add another testcase to IVPTestSuite which has a high cost of function evaluations, which is where AB methods are most useful
+  + Start work on a presentation slides/poster for JuliaCon and CAARMS
+3. (Wednesday) Main goal: Collect data on performance; start preparing demonstration and documentations for new solver and IVPTestSuite workflow
+  + Run comparison plots for different solvers against `ode_ab_adaptive`
+  + Document performance test "workflow" so that users can easily test solvers
+  + Using above documentation, post results of pwl's PR 
+  + Continue work no a presentation slides/poster for JuliaCon and CAARMS
+4. (Thursday) Main goal: Prepare for JuliCon; Continue adding new documentation for ODE.jl and IVPTestSuite.jl
+  + Add Julia Notebook of new solver on PLEI testcase
+  + Finish detailing IVPTestSuite workflow documentation, especially for new solvers (not yet in ODE.jl) and PR of ODE.jl
+  + Look more into BenchmarkTools.jl for tomorrow's Skype call;
+5. (Friday) Main goal: Prepare for JuliaCon; Look into BenchmarkTools.jl and wrapping other solvers
+  + Skype call with Mauro about JuliaCon statergy
+    - What to do about BenchmarkTools.jl
+    - Discuss my proposed presentation approach
+    - Discuss if there are other ODE.jl members I should meet with (and maybe discuss pwl's PR with)
+    - Discuss if there are any developers of other ODE solvers whom I should talk, especially those who developed solvers we may include in IVPTestSuite. 
+  + Explore wha
+6. (Saturday-Sunday)Main goal: Prepare for JuliaCon; Tidy up `ode_ab_adaptive` and IVPTestSuite.jl
+  + Make a plan for JuliaCon
+
