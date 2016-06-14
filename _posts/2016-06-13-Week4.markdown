@@ -4,15 +4,14 @@ categories: journal entry
 ---
 
 ###Up-to-date plan for the week
-1. (Monday) Main goal: Find out why `ode_ab_adaptive` is performing poorly
-  + Get `plei.jl` example fully functional, and compare performance of `ode_ab_adaptive` against RK methods (PLEI is a test case where function evaluations are expensive, which is where the AB methods are preferred. See Hairer pg 427)
-  + Skype about performance results and seek advice as to where the issues may be
-  + Continue debugging `ode_ab_adaptive` and also make switch to us `make_consisent_types()` function
-  + Have all IVPTestSuite feature branches ready for merging. First merge `m3/meta-gone`, then `ob/plei` and `ob/pyplot.`
+1. (Monday) Main goal: Tidying up IVPTestSuite.jl
+  + ~~Work towards getting `plei.jl` example fully functional, and compare performance of `ode_ab_adaptive` against RK methods (PLEI is a test case where function evaluations are expensive, which is where the AB methods are preferred. See Hairer pg 427)~~
+  + ~~Skype about performance results and seek advice as to where the issues may be~~
+  + ~~Have all IVPTestSuite feature branches ready for merging. First merge `m3/meta-gone`, then `ob/plei` and `ob/pyplot.`~~
 2. (Tuesday) Main goal: Optimize `ode_ab_adaptive`; Merge IVPTestSuite feature branches
-  + Continue to try to reduce memory usage of `ode_ab_adaptive`
-  + Merge feature branches of IVPTestSuite into master
-  + Add another testcase to IVPTestSuite which has a high cost of function evaluations, which is where AB methods are most useful
+  + Finish getting `plei.jl` functional
+  + Continue to try to reduce memory usage of `ode_ab_adaptive` and debugging `ode_ab_adaptive`
+  + Merge the IVPTestSuite branch ob/plei into master, and then ob/pyplot into master 
   + Start work on a presentation slides/poster for JuliaCon and CAARMS
 3. (Wednesday) Main goal: Collect data on performance; start preparing demonstration and documentations for new solver and IVPTestSuite workflow
   + Run comparison plots for different solvers against `ode_ab_adaptive`
@@ -33,4 +32,10 @@ categories: journal entry
 6. (Saturday-Sunday)Main goal: Prepare for JuliaCon; Tidy up `ode_ab_adaptive` and IVPTestSuite.jl
   + Focus on stylistic changes to make sure code is consistent with rest of ODE.jl release
   + Continue preparing JuliaCon presentation
+  + make switch to us `make_consisent_types()` function in `ode_ab_adaptive`
+  + Add another testcase to IVPTestSuite which has a high cost of function evaluations, which is where AB methods are most useful
 
+Journal Entry #16
++ Today I learned even more about git, and did several rebasings and squashings. Now, IVPTestSuite has metaprogramming gone, and there is a pull request to include the PLEI testcase, which is just one commit. Further the ob/pyplot2 branch which is based on ob/plei, which is just one commit ahead of ob/plei. 
++ Unfornately, I wasn't able to get to the bottom of what if causing the PLEI testcase to break. I plan on running some plots tomorrow, to make sure that it is not the case the the reference solution is incorrect. Though, there is likely a small bug somewhere. In fact, I found on small bug, though there is likely another somewhere.
++ Overall, after the PLEI test case is working, we can merge with master, than subsequently, merge ob/pyplot2, in which case there will be just the master branch of IVPTestSuite. I plan to have this all done by lunch tomorrow. Then, the singular focus for the rest of the week is making the VSVO AB solver correct. 
