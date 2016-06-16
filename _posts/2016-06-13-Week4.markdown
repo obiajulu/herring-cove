@@ -41,4 +41,22 @@ Journal Entry #16
 Journal Entry #17
 
 Journal Entry #18
++I'm going to run a battery of tests examining the performance of various solvers at various time spans. For example, I am curious to see how ode78 performs when force feed ode_ab_adaptive's step choices, and vice verse. For example, I see that
+ode45 has the same performance as ode_ab_adaptive when it uses the steps which ode_ab_adaptive outputs. So I'm starting to think that the performance maybe what is expected. I included two new solvers, for testing's purposes, in ob/a-b_adaptive: ode_ab_fixed and ode78f which are fixed stepped versions of ode_ab_adaptive and ode78. Running [the following script](https://gist.github.com/obiajulu/bf51e70283d3c343fe3c576680aac9c9), I get the following results:
+  -Running ode78, then ode_ab_fixed and ode4ms with same tspan:
+    -ode78:```  0.048609 seconds (365.18 k allocations: 11.472 MB)
+abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [2.3496853914830866e-11,6.293435148290328e-11,1.0298076122752797e-8,1.8166776207396305e-9]```
+    -ode_ab_fixed: ```  0.030161 seconds (223.50 k allocations: 10.701 MB)
+abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [0.0008514817839514464,0.010158178143821374,0.6887035831286313,0.36802746888707516]```
+    -ode4ms:  ```0.006645 seconds (51.60 k allocations: 3.031 MB)
+abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [0.0007672190085486067,0.00997421368469363,0.6910536150658455,0.36233092581519205]```
 
+  -Running ode_ab_adaptive, then ode78_fixed and ode4ms with same tspan
+    -ode_ab_adaptive:```0.275656 seconds (2.62 M allocations: 74.783 MB, 5.93% gc time)
+abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [0.0005981619640005499,0.0028106794731996843,0.3641672470209408,0.09662545830449291]
+    -ode78_fixed: ```  0.009091 seconds (69.59 k allocations: 2.149 MB)
+abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [6.167607181277784e-5,0.00014747394203141074,0.023917067023683625,0.00493469740030375]```
+      -ode4ms ```0.007884 seconds (83.64 k allocations: 4.913 MB)
+abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [0.0005054293139100048,0.002315323571133438,0.3141324004722242,0.07558923412335078]```
+I doubled checked to make sure that the two sets of 3 trial runs all use the same
+tspan. Notice that the ode_ab_* has the same performance results as ode4ms when they use identicial tspan which is to be expected, since they are the same method. However, ode78 performs better than both of these when it can pick is tspan adaptive, but even when it is force feed the tspan which ode_ab_adaptive choose. And this is not paritcular to only ode_ab_adaptive but also ode4ms!
