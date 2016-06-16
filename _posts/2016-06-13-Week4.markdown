@@ -16,22 +16,24 @@ categories: journal entry
   + ~~Run comparison plots for different solvers against `ode_ab_adaptive`~~
   + Experiment with fixed step AB and Runge-Kutta methods, to compare performance when the same `tspan` is used
 4. (Thursday) Main goal: Start preparing for JuliCon; continue to improve `ode_ab_adaptive`'s performance
-  + 
-  + Add Julia Notebook of new solver on PLEI testcase
-  + Look more into BenchmarkTools.jl for tomorrow's Skype call;
-5. (Friday) Main goal: Prepare for JuliaCon; Look into BenchmarkTools.jl and wrapping other solvers;  start preparing demonstration and documentations for new solver and IVPTestSuite workflow
-  + Skype call with Mauro about JuliaCon statergy
+  + Continue experimenting with the performance of `ode_ab_adaptive`, `ode_ab_fixed` against fixed and adaptive Runge Kutta solvers on various test cases
+  + Look more into BenchmarkTools.jl for today's Skype call;
+  +   Skype call with Mauro about JuliaCon statergy
     - What to do about BenchmarkTools.jl
     - Discuss my proposed presentation approach
     - Discuss if there are other ODE.jl members I should meet with (and maybe discuss pwl's PR with)
     - Discuss if there are any developers of other ODE solvers whom I should talk, especially those who developed solvers we may include in IVPTestSuite. 
+
+5. (Friday) Main goal: Prepare for JuliaCon; Look into BenchmarkTools.jl and wrapping other solvers;  start preparing demonstration and documentations for new solver and IVPTestSuite workflow
+  + Add Julia Notebook of new solver on PLEI testcase
+  + Document performance test "workflow" so that users can easily test solvers
+  + Continue preparing JuliaCon presentation
+
 6. (Saturday-Sunday)Main goal: Prepare for JuliaCon; Tidy up `ode_ab_adaptive` and IVPTestSuite.jl
   + Focus on stylistic changes to make sure code is consistent with rest of ODE.jl release
-  + Continue preparing JuliaCon presentation
   + make switch to us `make_consisent_types()` function in `ode_ab_adaptive`
   + Add another testcase to IVPTestSuite which has a high cost of function evaluations, which is where AB methods are most useful
-  + Document performance test "workflow" so that users can easily test solvers
-  + Using above documentation, post results of pwl's PR 
+  + Using workflow documentation, post results of pwl's PR 
 
 Journal Entry #16
 + Today I learned even more about git, and did several rebasings and squashings. Now, IVPTestSuite has metaprogramming gone, and there is a pull request to include the PLEI testcase, which is just one commit. Further the ob/pyplot2 branch which is based on ob/plei, which is just one commit ahead of ob/plei. 
