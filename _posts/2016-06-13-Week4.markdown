@@ -11,7 +11,7 @@ categories: journal entry
 2. (Tuesday) Main goal: Merge IVPTestSuite feature branches
   + ~~Finish getting `plei.jl` functional~~
   + ~~Merge the IVPTestSuite branch ob/plei into master~~
-  + ~~Then ob/pyplot into master ~~
+  + ~~Continue working towards merging ob/pyplot into master~~
 3. (Wednesday) Main goal: Collect data on performance and continue debugging
   + ~~Run comparison plots for different solvers against `ode_ab_adaptive`~~
   + Experiment with fixed step AB and Runge-Kutta methods, to compare performance when the same `tspan` is used
