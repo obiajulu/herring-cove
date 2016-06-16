@@ -14,7 +14,7 @@ categories: journal entry
   + ~~Continue working towards merging ob/pyplot into master~~
 3. (Wednesday) Main goal: Collect data on performance and continue debugging
   + ~~Run comparison plots for different solvers against `ode_ab_adaptive`~~
-  + Experiment with fixed step AB and Runge-Kutta methods, to compare performance when the same `tspan` is used
+  + ~~Experiment with fixed step AB and Runge-Kutta methods, to compare performance when the same `tspan` is used~~
 4. (Thursday) Main goal: Start preparing for JuliCon; continue to improve `ode_ab_adaptive`'s performance
   + Continue experimenting with the performance of `ode_ab_adaptive`, `ode_ab_fixed` against fixed and adaptive Runge Kutta solvers on various test cases
   + Look more into BenchmarkTools.jl for today's Skype call;
