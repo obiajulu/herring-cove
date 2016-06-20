@@ -1,0 +1,19 @@
+---
+title: Journal for Week 5
+categories: journal entry
+---
+
+###Up-to-date plan for the week
+1. (Monday) Main goal: Get work presentation ready
+  + Merge `pyplot2` into `main` on IVPTestSuite.jl. This way, all development on IVPTestSuite will be merged by JuliaCon
+  + Finish preparing presentation for JuliaCon
+  + Finish PLEI test case Julia Notebook
+  + Send pwl performance ticket and details on how to run tests himself
+2. (Tuesday) Main Goal: Attend JuliaCon Workshops
+3. (Wednesday) Main Goal: Attend JuliaCon Talks and start GSOC Midterm Evaluation
+4. (Thursday) Main Goal: Attend JuliaCon Talks and 
+5. (Friday) Main goal: Give JuliaCon presentation
+6. (Saturday) Main goal: Hack-a-thon
+  + Work with @pwl on his pull request
+  + Work with BenchMarkTools.jl?
+
