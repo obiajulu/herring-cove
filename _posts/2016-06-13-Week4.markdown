@@ -17,23 +17,21 @@ categories: journal entry
   + ~~Experiment with fixed step AB and Runge-Kutta methods, to compare performance when the same `tspan` is used~~
 4. (Thursday) Main goal: Start preparing for JuliCon; continue to improve `ode_ab_adaptive`'s performance
   + Continue experimenting with the performance of `ode_ab_adaptive`, `ode_ab_fixed` against fixed and adaptive Runge Kutta solvers on various test cases
-  + Look more into BenchmarkTools.jl for today's Skype call;
-  +   Skype call with Mauro about JuliaCon statergy
+  + ~~Look more into BenchmarkTools.jl for today's Skype call;~~
+  +~~   Skype call with Mauro about JuliaCon statergy~~
     - What to do about BenchmarkTools.jl
     - Discuss my proposed presentation approach
     - Discuss if there are other ODE.jl members I should meet with (and maybe discuss pwl's PR with)
     - Discuss if there are any developers of other ODE solvers whom I should talk, especially those who developed solvers we may include in IVPTestSuite. 
 
 5. (Friday) Main goal: Prepare for JuliaCon; Look into BenchmarkTools.jl and wrapping other solvers;  start preparing demonstration and documentations for new solver and IVPTestSuite workflow
-  + Add Julia Notebook of new solver on PLEI testcase
-  + Document performance test "workflow" so that users can easily test solvers
-  + Continue preparing JuliaCon presentation
+  + ~~Start working on Julia Notebook of new solver on PLEI testcase~~
+  + ~~ Start document performance test "workflow" so that users can easily test solvers~~
+  + ~~Continue preparing JuliaCon presentation~~
 
 6. (Saturday-Sunday)Main goal: Prepare for JuliaCon; Tidy up `ode_ab_adaptive` and IVPTestSuite.jl
-  + Focus on stylistic changes to make sure code is consistent with rest of ODE.jl release
-  + make switch to us `make_consisent_types()` function in `ode_ab_adaptive`
-  + Add another testcase to IVPTestSuite which has a high cost of function evaluations, which is where AB methods are most useful
-  + Using workflow documentation, post results of pwl's PR 
+  + Continue to work on improving performance of `ode_ab_adaptive` until it is comparable to `ode45` an d`ode78`
+  + ~~Focus on stylistic changes to make sure code is consistent with rest of ODE.jl release~~
 
 Journal Entry #16
 + Today I learned even more about git, and did several rebasings and squashings. Now, IVPTestSuite has metaprogramming gone, and there is a pull request to include the PLEI testcase, which is just one commit. Further the ob/pyplot2 branch which is based on ob/plei, which is just one commit ahead of ob/plei. 
@@ -65,3 +63,10 @@ abs((pos[end] - ic) ./ [ic[1],1,1,ic[4]]) = [0.0005054293139100048,0.00231532357
 
 + I doubled checked to make sure that the two sets of 3 trial runs all use the same
 tspan. Notice that the ode_ab_* has the same performance results as ode4ms when they use identicial tspan which is to be expected, since they are the same method. However, ode78 performs better than both of these when it can pick is tspan adaptive, but even when it is force feed the tspan which ode_ab_adaptive choose. And this is not paritcular to only ode_ab_adaptive but also ode4ms!
+
+Journal Entry #19 (Thursday, Friday, and Weekend)
++ The last few days of the week, I put intense focus on getting `ode_ab_adaptive` to be competitive with the other nonstiff adaptive solvers, like `ode78` and `ode45`. I am happy to say that this goal was met, as the following plots show. There were many small tweaks which led to the increase in performance. First, I was much more careful about how I was handling my initial step size selection scheme, for the first few steps. @mauro3 pointed out that I was using `hinit` with the incorrect order, which introduced an error at the first step which proprogated throughout the computation. The other tweak I found I had to make was to set `minstep` to an approriate size. I was originally working with `minstep = (tspan[end]-tspan[1])/1e-15` when I should have instead used a smaller `minstep`, as does `ode78`. With these changes, `ode_ab_adaptive` is performing quite well. 
++ I threw together a JuliaBox Notebook of the new PLEI test case, which I hope to add to ODE.jl
++ I ran a few plots of fixed step size solvers, graphing walltime vs scd and stepsize vs scd, in order to see if I saw the approriate association between slopes and orders. These were observed mostly in the walltime vs scd plots, and somewhat in the stepsize vs scd plots
+
++ I wasn't able 
