@@ -5,7 +5,7 @@ categories: journal entry
 
 ###Up-to-date plan for the week
 1. (Monday) Main goal: Get `ode113()` pull request ready
-  + Run tests against ODE in house tests
+  + Run in-house test against ode113
   + Use `make_consistent_types()`
   + Run PR tests
   + Open pull request to ODE.jl for ode113
