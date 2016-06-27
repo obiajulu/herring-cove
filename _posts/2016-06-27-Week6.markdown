@@ -13,6 +13,6 @@ categories: journal entry
 2. (Tuesday) Main goal: Work on Iterative form of Explicit Adam Bashforth Method
   + Create `ode_ms` function in iterative form
 2. (Wednesday-Thursday) Main Goal: Outline RADAU solver and start implementing
-3. (Friday) Main Goal: Main Goal: Continue implementation of RADAU
+3. (Friday) Main Goal: Continue implementation of RADAU
 4. (Friday) Main Goal: Continue to work on IVPTestSuite, for make it more terminal friendly
 
