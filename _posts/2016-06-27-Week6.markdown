@@ -7,9 +7,8 @@ categories: journal entry
 1. (Monday-Tuesday) Main goal: Work on Iterative form of Explicit Adam Bashforth Method
   + Create `ode_ms` function in iterative form
   + Open pull request to ODE.jl for ode113?
+  + Post on PR 49 about terminal mode of IVPTestSuite
 2. (Tuesday-Wednesday) Main Goal: Work on Iterative form of VSVO Adam Bashforth Method(`ode113`)
 3. (Wednesday) Main Goal: Main Goal: Merge `ode113` iterative method into pwl's PR 
-4. (Thursday) Main Goal: 
-5. (Friday) Main goal: 
-6. (Saturday) Main goal: Hack-a-thon
+4. (Thursday - Friday) Main Goal: Continue to work on IVPTestSuite, for make it more terminal friendly
 
