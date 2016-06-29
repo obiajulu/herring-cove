@@ -5,14 +5,18 @@ categories: journal entry
 
 ###Up-to-date plan for the week
 1. (Monday) Main goal: Get `ode113()` pull request ready
-  + Run in-house test against ode113
-  + Use `make_consistent_types()`
-  + Run PR tests
-  + Open pull request to ODE.jl for ode113
-  + Post on PR 49 about terminal mode of IVPTestSuite
-2. (Tuesday) Main goal: Work on Iterative form of Explicit Adam Bashforth Method
+  + ~~Run in-house test against ode113~~
+  + ~~Use `make_consistent_types()`~~
+  + ~~Run PR tests~~
+  + ~~Post on PR 49 about terminal mode of IVPTestSuite~~
+
+3. (Wednesday) Main goal: Open PR of ode113
+  + Finish fixing dense output
+  + Run performance tests with IVPTestSuite.jl
+  + Write PR write up describing solver
+3. (Wednesday) Main goal #2 (if there is time): Work on Iterative form of Explicit Adam Bashforth Method
   + Create `ode_ms` function in iterative form
-2. (Wednesday-Thursday) Main Goal: Outline RADAU solver and start implementing
-3. (Friday) Main Goal: Continue implementation of RADAU
+2. (Thursday) Main Goal: Outline RADAU solver and start implementing
+3. (Friday) Main Goal: Continue implementation of RADAU and write up `ode113` report with Yingbo
 4. (Saturday) Main Goal: Continue to work on IVPTestSuite, for make it more terminal friendly
 
