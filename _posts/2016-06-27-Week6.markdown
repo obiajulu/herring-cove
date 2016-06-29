@@ -9,14 +9,27 @@ categories: journal entry
   + ~~Use `make_consistent_types()`~~
   + ~~Run PR tests~~
   + ~~Post on PR 49 about terminal mode of IVPTestSuite~~
-
+2. (Wednesday) Main goal: Open PR of ode113
+  + ~~Start implementing dense output~~
+  + ~~Tidy up type handling~~
+  + ~~Tidy up `ode113` documentation~~
 3. (Wednesday) Main goal: Open PR of ode113
   + Finish fixing dense output
+  + Refactor multiple `make_consisent_type()` functions
   + Run performance tests with IVPTestSuite.jl
   + Write PR write up describing solver
-3. (Wednesday) Main goal #2 (if there is time): Work on Iterative form of Explicit Adam Bashforth Method
+4. (Wednesday) Main goal #2 (if there is time): Work on Iterative form of Explicit Adam Bashforth Method
   + Create `ode_ms` function in iterative form
-2. (Thursday) Main Goal: Outline RADAU solver and start implementing
-3. (Friday) Main Goal: Continue implementation of RADAU and write up `ode113` report with Yingbo
-4. (Saturday) Main Goal: Continue to work on IVPTestSuite, for make it more terminal friendly
+5. (Thursday) Main Goal: Outline RADAU solver and start implementing and writing reporth with Yingbo
+6. (Friday) Main Goal: Continue implementation of RADAU and write up `ode113` report with Yingbo
+7. (Saturday) Main Goal: Continue to work on IVPTestSuite, for make it more terminal friendly
 
+Journal entry Week 6 #1-#2
+  + The focus of the last two days has been to get `ode113` pull request ready. There were a number of smaller tasks which I remembered still needed implementing or fixing in `ode113`. Most of these were rather small:
+    + use `make_consistent_types()`
+    + have better type handling to pass @mauro3's recent PRs 
+    + replace calling `resize!()` on `t,dy,y` with using working variables, and simply `push!()`-ing these to `t,dy,y`
+    + add clearer documentation
+    + implement dense output
+    + use less expensive summation loops by looping over array elements
+  I was able to implement all of these save the last two. The dense output scheme seems to be the correct one, relying on taking advantage of the polynomial interpolation inherent to the AB method. However, currently, I see that the error on these interpolated points is too large. Some initial plots that I ran suggest that it could be that this interpolation in actually at a lower order than I thought (namely, lower than the order used to interpolate the derivative). Tomorrow I am hoping to investigating into more, and think it should not take too long to fix. 
