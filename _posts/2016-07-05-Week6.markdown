@@ -1,0 +1,14 @@
+---
+title: Journal for Week 6
+categories: journal entry
+---
+
+###Up-to-date plan for the week
+1. (Tuesday) Main goal: Complete a full high level mock up of RADAU IIA, and write Julia psuedo-code for the entire solver.
+2. (Wednesday) Main goal: Rapid protyping of RADAU IIA 
+  + Work with Yingbo to rapidly code up the outline of RADAU IIA solver
+3. (Thursday) Main goal: Debugging initial prototype of RADAU IIA
+  + Unit tests with RADAU IIA, mostly to test for convergence
+4. (Friday) Main goal: Continuation of debugging of intial prototype, with aid of IVPTestSuite plots
+
+
