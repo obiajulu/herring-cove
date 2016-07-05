@@ -14,15 +14,13 @@ categories: journal entry
   + ~~Tidy up type handling~~
   + ~~Tidy up `ode113` documentation~~
 3. (Wednesday) Main goal: Open PR of ode113
-  + Finish fixing dense output
+  + ~~Finish fixing dense output~~
   + Refactor multiple `make_consisent_type()` functions
-  + Run performance tests with IVPTestSuite.jl
-  + Write PR write up describing solver
-4. (Wednesday) Main goal #2 (if there is time): Work on Iterative form of Explicit Adam Bashforth Method
-  + Create `ode_ms` function in iterative form
-5. (Thursday) Main Goal: Outline RADAU solver and start implementing and writing reporth with Yingbo
-6. (Friday) Main Goal: Continue implementation of RADAU and write up `ode113` report with Yingbo
-7. (Saturday) Main Goal: Continue to work on IVPTestSuite, for make it more terminal friendly
+  + ~~Run performance tests with IVPTestSuite.jl~~
+4. (Thursday) Main goal #2 (if there is time): Work on Iterative form of Explicit Adam Bashforth Method
+  + ~~Create `ode_ms` function in iterative form~~
+  + ~~Create `ode_am` function in iterative form~~
+6. (Friday) Main Goal: ~~Open PR of `ode113,ode_am` and work on write up report with Yingbo~~
 
 Journal entry Week 6 #1-#2
   + The focus of the last two days has been to get `ode113` pull request ready. There were a number of smaller tasks which I remembered still needed implementing or fixing in `ode113`. Most of these were rather small:
@@ -34,3 +32,9 @@ Journal entry Week 6 #1-#2
     - use less expensive summation loops by looping over array elements
   
   + I was able to implement all of these save the last two. The dense output scheme seems to be the correct one, relying on taking advantage of the polynomial interpolation inherent to the AB method. However, currently, I see that the error on these interpolated points is too large. Some initial plots that I ran suggest that it could be that this interpolation in actually at a lower order than I thought (namely, lower than the order used to interpolate the derivative). Tomorrow I am hoping to investigating into more, and think it should not take too long to fix. 
+
+Journal entry Week 6 #3-#5
++ I spent a good amount of time working with iterators on Wednesday and Thursday, mostly to get my head around all the discussions that are happending on PR 49. I had success implementing both the explicit and implicit Adam Bashforth Moulton fixed step methods. Though, I think there may be some small bug because I did not observe increased precision with high orders. The solvers were within 1e-2 of the reference solution for the 5 tests run.
++ I also spend time polishing off solvers `ode113` and `ode_am` to open up a pull request against JuliaLang on Friday. It seems, and rightfully so, that most attention is being paid to PR 49, so I have yet to receive any feedback from the ODE.jl community.
+
+
