@@ -12,6 +12,6 @@ categories: journal entry
 
 
 ### Main Goals for Weeks 10-17
-1. Finishi polishing Adam Bashforth PR (weeks 9-10)
+1. Finish polishing Adam Bashforth PR (weeks 9-10)
 2. Notebook version of IVPTestSuite (Weeks 10-13) 
 3. Finish implementing Radau Solver (Weeks 14-17)
